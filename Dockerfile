@@ -32,8 +32,8 @@ ENV PATH="${PATH}:/usr/local/nodejs/bin"
 # end workaround
 
 RUN yum update -y && \
-    yum -y install centos-release-scl make gcc-c++ && \
-    yum -y install devtoolset-9 python3 npm unixODBC unixODBC-devel && \
+    yum -y install centos-release-scl make gcc-c++
+RUN yum -y install devtoolset-9 python3 npm unixODBC unixODBC-devel && \
     yum -y clean all && rm -rf /var/cache/yum
 
 RUN echo "source /opt/rh/devtoolset-9/enable" >> /etc/bashrc
